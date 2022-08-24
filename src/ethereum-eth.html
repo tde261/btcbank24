@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Etherium ETH - BtcBank24</title>
+    <meta name="description"
+        content="Ethereum (эфириум) – децентрализованная система блокчейн, основной единицей расчетов в которой является криптовалюта Ether (ETH, эфир). Предложение по разработке Ethereum было представлено в 2013 году главный разработчик – Виталик Бутерин" />
+@@include('html/headBlock.html',{})
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500&display=swap" rel="stylesheet">
+    <style type="text/css">
+    	///  Fonts  ///
+h1 {
+    font-size: 25px !important;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+h1, 
+h2, 
+p {
+    font-family: 'Red Hat Text', sans-serif;
+    color: #303030;
+}
+
+/// Card Container ///
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+
+/// Cards ///
+cards {
+    width: 90%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.btc,
+.cosmos,
+.ethereum {
+    display: grid;
+    min-width: 250px;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(50px, 60px) 1fr;
+    grid-template: 
+        "info"
+        "chart";
+    border-radius: 30px;
+}
+
+.btc {
+}
+
+.cosmos {
+}
+
+.ethereum {
+}
+
+.asset-info {
+    grid-area: info;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5% 0 5%;
+    margin-bottom: 23px;
+}
+
+.title {
+    display: inline-flex;
+}
+
+card h1 {
+    margin-left: 10px;
+}
+
+
+/// Charts ///
+#btcChart,
+#cosmosChart,
+#ethereumChart {
+    grid-area: chart;
+    border-radius: 0px 0px 30px 30px;
+    margin-top: auto;
+}
+
+    </style>
+    <!--, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 -->
+ 
+
+
+<link type="image/png" sizes="120x120" rel="icon" href="/img/favicon.png">
+</head>
+
+<body class="body">
+    <div class="wrapper text">
+        @@include('html/header.html',{})
+
+        <main class="main">
+
+            <section class="content">
+                <h1 class="content__title__h1 box_about_title">Ethereum</h1>
+                <container class="container">
+    <cards class="cards">
+        <ethereum style="margin-bottom: 40px;" class="ethereum">
+            <card class="asset-info">
+                <div class="title">
+                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg" width="10%"> 
+                    <h1>Ethereum</h1>
+                </div>
+                <div class="details">
+                    <h2 class="asset-price" id="ethPrice"></h2>
+                </div>
+            </card>
+            <canvas id="ethereumChart"></canvas>
+        </ethereum>
+    </cards>
+  </container>
+                
+                  <h3 style="margin: 20px 0 10px 0;"><b>Что такое Ethereum?</b></h3>
+                  <p>Ethereum (эфириум) – децентрализованная система блокчейн, основной единицей расчетов в которой является криптовалюта Ether (ETH, эфир). Предложение по разработке Ethereum было представлено в 2013 году (главный разработчик – Виталик Бутерин), а запустили проект уже в 2015 году (после сбора необходимой суммы финансовых средств и непосредственно реализации идеи в техническом плане). С того времени блокчейн Ethereum неоднократно обновлялся, что способствовало улучшению функциональности сети и ее популяризации среди пользователей со всего мира.</p>
+                  <p>Система Ethereum предоставляет пользователям множество функциональных возможностей, причем главным назначением программной платформы является создание условий для разработки и размещения децентрализованных приложений, предназначенных для реализации смарт-контрактов. При этом значительная часть пользователей используют блокчейн исключительно ради проведения транзакций криптовалюты Ether, тем самым осуществляя инвестиции или оплачивая различного рода услуги. Также сеть Ethereum используется как платформа для взаимодействия с большим количеством других криптовалют, благодаря чему перед пользователями сети открываются дополнительные возможности.</p>
+
+                  <h3 style="margin: 20px 0 10px 0;"><b>Ключевые особенности Ether</b></h3>
+                  <p>На момент подготовки этого материала Ether является второй по величине капитализации криптовалютой, уступая по этому показателю лишь биткоину. То же самое касается популярности этой криптовалюты. Уже несколько лет Ether прочно удерживает вторую позицию в плане востребованности, что подтверждается исследованиями известных криптоэнтузиастов и независимых экспертов.</p>
+                  <p>Важной особенностью эфира является неограниченная эмиссия этой монеты. В настоящий момент в свободном обращении находится около 120 млн ETH. А поскольку процесс добычи эфира не останавливается ни на минуту, то теоретически количество этой валюты может расти бесконечно. Разумеется, в стандартных условиях такой расклад привел бы к быстрому снижению стоимости Ether, поэтому создатели блокчейна предусмотрели эффективные меры противодействия, позволяющие сохранять количество доступного эфира примерно на одном уровне.</p>
+                  <p>Для предотвращения инфляции Ether был разработан механизм, позволяющий «сжигать» часть эфира при выполнении некоторых операций в блокчейн. В частности, уничтожение эфира происходит при проведении внутрисистемных транзакций («сжигается» базовая комиссия системы), при создании невзаимозаменяемых токенов (NFT), а также при развертывании смарт-контрактов и в некоторых других случаях, предусмотренных создателями сети. Удаление эфира производится путем отправки «сжигаемой» валюты на несуществующий адрес. Такой подход позволяет удерживать ценность Ethereum на высоком уровне и даже создает предпосылки для увеличения стоимости валюты после планируемого перехода блокчейн Ethereum на алгоритм Proof-of-Stake (переход ожидается в 2022 либо 2023 году).</p>
+
+                   <h3 style="margin: 20px 0 10px 0;"><b>Где можно купить и как использовать Ether?</b></h3>
+                    <p>Популярность этой валюты действительно высока, поэтому приобрести ее можно на многих платформах – в криптовалютных обменниках, на специализированных <a href="/data-table.html">биржах</a> и, конечно же, на P2P-площадках. В частности, возможна покупка эфира за все популярные криптовалюты (в том числе <a href="/bitcoin-btc.html">BTC</a> и <a href="/usdt-trc20.html">USDT</a>) и за фиатные валюты (в том числе USD, EUR, GBP, JPY).</p>
+                    <p>Использовать эфир можно несколькими способами. Во-первых, с помощью этой криптовалюты можно оплачивать товары и услуги (главное, найти контрагента, который принимает упомянутую валюту). Во-вторых, эфир можно хранить в надежде на рост его стоимости. Также валютой можно торговать, зарабатывая на разнице курсов в разные моменты времени. В-третьих, можно инвестировать эфир в определенные проекты – для дальнейшего получения какой-либо выгоды либо реализации проектов некоммерческого направления. Вариантов использования эфира много, причем, согласно имеющимся данным, в дальнейшем количество областей применения этой криптовалюты только вырастет. </p>
+                
+
+            </section>
+
+        </main>
+        @@include('html/footer.html',{})
+    </div>
+
+    
+    <script src="js/app.min.js"></script>
+     <script>
+      const ethereumData = async () => {
+  const response = await fetch('https://min-api.cryptocompare.com/data/v2/histoday?fsym=ETH&tsym=USD&limit=1110');
+  const json = await response.json();
+  const data = json.Data.Data
+  const times = data.map(obj =>  new Date(obj.time))
+  const prices = data.map(obj => obj.high)
+  return {
+    times,
+    prices
+  }
+}
+let createethereumChart
+
+       function checkStatus(response) {
+         if (response.ok) {
+           return Promise.resolve(response);
+         } else {
+           return Promise.reject(new Error(response.statusText));
+         }
+       }
+       
+       let createBtcChart
+
+       async function printEthereumChart() {
+  let { times, prices } = await ethereumData()
+
+  let ethereumChart = document.getElementById('ethereumChart').getContext('2d');
+
+  let gradient = ethereumChart.createLinearGradient(0, 0, 0, 900);
+
+  gradient.addColorStop(0, 'rgba(78,56,216,.5)');
+  gradient.addColorStop(.425, 'rgba(118,106,192,0)');
+
+  Chart.defaults.global.defaultFontFamily = 'Red Hat Text';
+  Chart.defaults.global.defaultFontSize = 12;
+
+  createEthereumChart = new Chart(ethereumChart, {
+    type: 'line',
+    data: {
+      labels: times,
+      datasets: [{
+        label: '$',
+        data: prices,
+        backgroundColor: gradient,
+        borderColor: 'rgba(118,106,192,1)',
+        borderJoinStyle: 'round',
+        borderCapStyle: 'round',
+        borderWidth: 3,
+        pointRadius: 0,
+        pointHitRadius: 10,
+        lineTension: .2,
+      }]
+    },
+
+    options: {
+      title: {
+        display: false,
+        text: 'Heckin Chart!',
+        fontSize: 35
+      },
+
+      legend: {
+        display: false
+      },
+
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+        }
+      },
+
+      scales: {
+        xAxes: [{
+          display: false,
+          gridLines: {}
+        }],
+        yAxes: [{
+          display: true,
+          gridLines: {}
+        }]
+      },
+
+      tooltips: {
+        callbacks: {
+          //This removes the tooltip title
+          title: function() {}
+       },
+        //this removes legend color
+        displayColors: false,
+        yPadding: 10,
+        xPadding: 10,
+        position: 'nearest',
+        caretSize: 10,
+        backgroundColor: 'rgba(255,255,255,.9)',
+        bodyFontSize: 15,
+        bodyFontColor: '#303030' 
+      }
+    }
+  });
+}
+
+      async function updateEthereumPrice() {
+  let { times, prices } = await ethereumData()
+  let currentPrice = prices[prices.length-1].toFixed(2);
+
+  document.getElementById("ethPrice").innerHTML = "$" + currentPrice;
+}
+      updateEthereumPrice()
+      printEthereumChart()
+     </script>
+
+</body>
+
+
+</html>

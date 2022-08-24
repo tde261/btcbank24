@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>404 - страница не найдена</title>
+    <meta name="description" content="404 страница не найдена." />
+
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+@@include('html/headBlock.html',{})
+    <!--, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 -->
+ 
+
+
+<link type="image/png" sizes="120x120" rel="icon" href="/img/favicon.png">
+</head>
+
+<body class="body">
+    <div class="wrapper text">
+        @@include('html/header.html',{})
+
+
+
+
+
+        <main class="main">
+
+            <section class="content content_404">
+                
+                <div class="content__content box_404_text">
+                    <h1>ERROR</h1>
+                    <p>PAGE NOT FOUND</p>
+
+                </div>
+                <div class="content__img box_404_img">
+                    <img class="img_404" src="img/404.svg" alt="">
+                </div>
+
+                <div class="button_404">
+                    <a class="button" href="/"
+                        rel="nofollow">перейти на главную страницу</a>
+
+                </div>
+
+            </section>
+        </main>
+        @@include('html/footer.html',{})
+    </div>
+    
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

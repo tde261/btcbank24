@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Страница профиля - BtcBank24</title>
+  <meta name="description"
+    content="Личный кабинет пользователя BtcBank24" />
+
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+@@include('html/headBlock.html',{})
+  <!--, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 -->
+ 
+
+
+<link type="image/png" sizes="120x120" rel="icon" href="/img/favicon.png">
+</head>
+
+<body class="body">
+  <div class="wrapper text">
+    @@include('html/header.html',{})
+
+    <main class="main partners-wrap">
+
+
+      <section class="content content partners">
+        <h1 class="content__title__h1">Партнёрам </h1>
+        <content class="profile">
+           
+            <h3><b>Логин: <span id="userLogin"></span></b></h3>
+            <h3 style="margin: 10px 0;"><b>Дата регистрации: <span id="regDate"></span></b></h3>
+            <hr>
+            
+            <h3 style="margin: 42px 0 13px;">Сменить логин:</h3>
+            <input type="text" class="type-3" id="newLogin" />
+            <button class="button" id="changeLoginBtn">Сменить</button>
+            
+            <h3 style="margin: 42px 0 13px;">Сменить пароль:</h3>
+            <input type="text" class="type-3" id="newPassword" />
+            <button class="button" id="changePasswordBtn">Сменить</button>
+          </content>
+          <script>
+             const username = localStorage.getItem('username');
+             $.post('/server.php', {'user': username ,'profile': true}, function(data){
+              
+                localStorage.setItem('userdata', data);
+              
+             
+               const ls = JSON.parse(localStorage.getItem('userdata'));
+               
+               if(ls) {
+                 $('#userLogin').html(ls[0].username);
+                 $('#regDate').html(ls[0].registerdate);
+               }
+               
+               $('#changeLoginBtn').click(function() {
+                 const newlogin = $('#newLogin').val();
+                 $.post('/server.php', {'username': username, 'newlogin': newlogin ,'changelogin': true}, function(data){
+                   if(data) {
+                       localStorage.setItem('username', newlogin);
+                       window.location.reload();
+                   }
+                 });
+               });
+               
+               $('#changePasswordBtn').click(function() {
+                 const newpassword = $('#newPassword').val();
+                 if(newpassword.length > 5){
+                    $.post('/server.php', {'username': username, 'newpassword': newpassword ,'changepassword': true}, function(data){
+                      if(data) {
+                          window.location.reload();
+                      }
+                    });
+                 }
+               });
+             
+             });
+          </script>
+
+
+
+
+      </section>
+
+    </main>
+    @@include('html/footer.html',{})
+  </div>
+
+
+  <script src="js/app.min.js"></script>
+  
+
+</body>
+
+
+</html>

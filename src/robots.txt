@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /register.php
+Disallow: /login.php
+Disallow: /xmlrpc.php?
+Disallow: /xmlrpc.php
+Disallow: /profile.html
+Disallow: /agreement.html
+Disallow: /privacy.html

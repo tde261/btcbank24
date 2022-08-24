@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Список лучших криптовалютных бирж - BtcBank24</title>
+    @@include('html/headBlock.html',{})
+    <meta name="description" content="Контакты компании BtcBank24 - в рабочее время, мы готовы ответить на любой ваш вопрос!" />
+    <link rel="stylesheet" href="css/style.css?_v=20220605085415">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css?_v=20220605085415" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20220605085415"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js?_v=20220605085415"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.js"></script>
+    <!--, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 -->
+    <style>
+        #dd {
+        width:100% !important;
+    }
+    thead,
+    .exchange-name { 
+        font-weight: bold !important;
+    }
+
+ .odd {
+    background: #f1f1f1 !important;
+}
+td {
+    box-shadow: none !important;
+}
+.dark #dd_wrapper .paginate_button {
+    color: white !important;
+}
+</style>
+ 
+
+
+<link type="image/png" sizes="120x120" rel="icon" href="/img/favicon.png">
+</head>
+
+<body class="body">
+    <div class="wrapper text" style="display: block;">
+        @@include('html/header.html',{})
+        <main class="main" style="display: block;max-width: 1000px;margin: auto;">
+            <!--    https://api.coingecko.com/api/v3/derivatives/exchanges GET  -->
+            <section class="content">
+                <h1 class="content__title__h1 box_about_title">Список лучших криптовалютных бирж</h1>
+                <p style="margin-bottom: 21px;">Список лучших платформ криптобирж. Рейтинг биржи основан на объеме торгов за 24 часа. Просматривайте рейтинг криптовалютных бирж в реальном времени, данные о рынках, объем за 24 часа и информацию.</p>
+                <table id="dd" class="display responsive nowrap" width="100%">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Название</td>
+                            <td>Торговый оборот (24часа)</td>
+                            <td>Страна</td>
+                            <td>Основано</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tb">
+                    </tbody>
+                </table>
+                <script>
+                  $.ajax({
+                    url: "https://api.coingecko.com/api/v3/exchanges",
+                    type: 'GET',
+                    dataType: 'json', // added data type
+                    success: function(res) {
+                        var table = document.getElementById('tb')
+
+                        for (var i = 0; i < res.length; i++) {
+
+                            var row = `<tr>
+                                         <td>${i + 1}</td>
+                                         <td class="exchange-name">${'<a style="color: black;text-decoration: none;" target="_blank" class="link_content"  href="'+res[i].url+'"><img style="width: 25px;" class="exchange-logo" src="'+res[i].image+'" alt="logo"/><span style="position: relative;top: 3px;"> ' + res[i].name+'</span></a>'}</td>
+                                         <td>${res[i].trade_volume_24h_btc.toFixed(2)+' BTC'}</td>
+                                         <td>${res[i].country}</td>
+                                         <td>${res[i].year_established}</td>
+
+                                      </tr>`
+                            table.innerHTML += row
+
+                        }
+
+                        var tab = $('#dd').DataTable({
+                            responsive: true,
+                            "pageLength": 50,
+                            "language": {
+                                "emptyTable": "Нет данных",
+                                "zeroRecords": "Записей не найдено",
+                                "info": "Показано _START_ до _END_ из _TOTAL_ записей",
+                                "search": "Поиск: ",
+                                "lengthMenu": "Показать _MENU_ записей",
+                                "paginate": {
+                                    "previous": "Предыдущая",
+                                    "next": "Следующая",
+                                    "infoEmpty": "Показано 0 to 0 of 0 записей"
+                                }
+                            }
+                        });
+                    }
+                });
+                </script>
+            </section>
+        </main>
+        @@include('html/footer.html',{})
+    </div>
+    <script src="js/app.min.js?_v=20220605085415"></script>
+</body>
+
+</html>

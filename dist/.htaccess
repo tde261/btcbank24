@@ -1,0 +1,15 @@
+AddDefaultCharset utf-8
+
+RewriteEngine on
+
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+
+Redirect 301 /index https://btcbank24.site/
+
+Redirect 301 btcbank24.site https://btcbank24.site
+

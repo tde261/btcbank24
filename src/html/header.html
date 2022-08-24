@@ -1,0 +1,101 @@
+<header class="header text" >
+    <a href="/index.html" class="header__logo"></a>
+            
+    <div class="header__burger">
+        <span></span>
+    </div>
+    <nav class="header__menu">
+        <ul class="header__list">
+            <li>
+                <a href="" class="header__link">Направления обмена</a>
+                <span class="menu__arrow"></span>
+                <ul class="menu__sub-list">
+                    <li><a class="menu__sub-link" href="/obmen-sberbank-bitcoin.html">Сбербанк на Bitcoin (BTC)</a></li>
+                    <li><a class="menu__sub-link" href="/obmen-bitcoin-na-sberbank.html">Bitcoin (BTC) на Сбербанк</a></li>
+                    <li><a class="menu__sub-link" href="/kupit-monero-xmr.html">Купить/Продать Monero XMR</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="/partners.html" class="header__link">Партнёрам</a>
+            </li>
+            <li>
+                <a href="/contest.html" class="header__link">🎁Конкурс</a>
+            </li>
+            <li>
+                <a href="/bitcoin-accelerator/index.php" class="header__link">🚀 Ускоритель транзакций</a>
+            </li>
+            <li>
+                <a href="/blog.html" class="header__link">Блог</a>
+            </li>
+            <li>
+                <a href="/data-table.html" class="header__link">Биржи</a>
+            </li>
+            <li>
+                <a href="/about.html" class="header__link">Контакты</a>
+            </li>
+        </ul>
+                <script>
+                     function toggledark() {
+                        if (localStorage.getItem('theme') === 'dark') {
+                            localStorage.removeItem('theme');
+                            document.body.classList.remove("dark");
+                            if(document.getElementById('firstImage') !== null) {
+                                document.getElementById('firstImage').innerHTML = `<img src="img/obmen-bitcoin-v-telegramme-btcbank24.svg" alt="">`;
+                            }
+                            if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24.svg" alt="logo">`;
+                            }
+                            document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24.svg);');
+                            } else {
+                            localStorage.setItem('theme', 'dark');
+                            document.body.classList.add("dark");
+                            if(document.getElementById('firstImage') !== null) {
+                                document.getElementById('firstImage').innerHTML = `<img src="img/obmennik-bitcoin-v-telegram_2.svg" alt="">`;
+                            }
+                            if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24_2.svg" alt="logo">`;
+                            }
+                            document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24_2.svg);');
+                        }
+                    }                
+
+                    document.addEventListener("DOMContentLoaded", () => {
+                    if (localStorage.getItem('theme') === 'dark') {
+                        document.body.classList.add('dark');
+                        document.getElementById('toggledark').checked = true;
+                        if(document.getElementById('firstImage') !== null) {
+                          document.getElementById('firstImage').innerHTML = `<img src="img/obmennik-bitcoin-v-telegram_2.svg" alt="">`;
+                        }
+                        if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24_2.svg" alt="logo">`;
+                        }
+                        document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24_2.svg);');
+                    } else {
+                        document.body.classList.remove('dark');
+                        document.getElementById('toggledark').checked = false;
+                        if(document.getElementById('firstImage') !== null) {
+                          document.getElementById('firstImage').innerHTML = `<img src="img/obmen-bitcoin-v-telegramme-btcbank24.svg" alt="">`;
+                        }
+                        if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24.svg" alt="logo">`;
+                        }
+                        document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24.svg);');
+                    }
+                  });
+
+                </script>
+        
+    </nav>
+    <div class="dark-version-wrapper">
+                <label class="dark-version">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+
+                    <path xmlns="http://www.w3.org/2000/svg" style="fill:black;" d="M29,28c0-11.917,7.486-22.112,18-26.147C43.892,0.66,40.523,0,37,0C21.561,0,9,12.561,9,28  s12.561,28,28,28c3.523,0,6.892-0.66,10-1.853C36.486,50.112,29,39.917,29,28z"/>
+                   </svg>
+
+                    <input type="checkbox" onchange="toggledark()" id="toggledark">
+                    <span class="toggledark round"></span>
+                </label>
+            </div>
+</header>

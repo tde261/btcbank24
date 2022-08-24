@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Партнерам - BtcBank24</title>
+  <meta name="description"
+    content="Реферальная система для партнёров BtcBank24." />
+
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+@@include('html/headBlock.html',{})
+  <!--, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 -->
+ 
+
+
+<link type="image/png" sizes="120x120" rel="icon" href="/img/favicon.png">
+</head>
+
+<body class="body">
+  <div class="wrapper text">
+    @@include('html/header.html',{})
+
+    <main class="main partners-wrap">
+
+
+      <section class="content content partners">
+        <h1 class="content__title__h1">Партнёрам </h1>
+        <div class="content__content">
+          <content class="calculator">
+            <p style="margin-bottom: 50px;">Реферальная система: пригласи друга, и получай долю от суммы его обменов!
+            </p>
+            <h4>Cумма обмена: <span id="rangeValue">4000</span> руб</h4>
+            <input type="range" class="range range1" name="" value="4000" min="1" max="10000"
+              onmousemove="rangeSlider(this.value)" touchmove="rangeSlider(this.value)"
+              onchange="rangeSlider(this.value)">
+
+            <h4><span>Колличество активных рефералов: </span><span id="rangeValue2">1</span></h4>
+            <input type="range" class="range range2" name="" value="1" min="1" max="150"
+              onmousemove="rangeSlider2(this.value)" touchmove="rangeSlider2(this.value)"
+              onchange="rangeSlider2(this.value)">
+            <div class="calculator-results">
+              <h4><span>Проценты по реферальной программе: </span><span id="proc">1</span>%</h4>
+              <h4><span>Заработок с 1 реферала: </span><span id="summ"></span> руб</h4>
+              <h4><span>Итоговый заработок с <span id="ppp"></span> реферала(ов): </span><span id="summ2"></span> руб
+              </h4>
+            </div>
+            <p style="margin: 50px 28px 0 0;">ℹ️ Реферал считается активным, если за последние 30 дней совершил один
+              обмен или более.</p>
+          </content>
+          <script>
+            dd()
+            function dd() {
+              var sum = document.querySelector('.range1').value;
+              var ref = document.querySelector('.range2').value;
+
+              if (ref < 10) {
+                var proc = 1
+              } else if (ref < 20 && ref >= 10) {
+                var proc = 1.2
+              } else if (ref < 30 && ref >= 20) {
+                var proc = 1.4
+              } else if (ref < 40 && ref >= 30) {
+                var proc = 1.6
+              } else if (ref < 50 && ref >= 40) {
+                var proc = 1.8
+              } else if (ref < 70 && ref >= 50) {
+                var proc = 2.0
+              } else if (ref < 90 && ref >= 70) {
+                var proc = 2.1
+              } else if (ref < 110 && ref >= 90) {
+                var proc = 2.2
+              } else if (ref < 130 && ref >= 110) {
+                var proc = 2.3
+              } else if (ref < 150 && ref >= 130) {
+                var proc = 2.4
+              } else if (ref >= 150) {
+                var proc = 2.5
+              }
+
+
+
+              var result = Number(sum / 100 * proc); //вычисление процентов                     
+
+              var summ2 = result * ref
+
+
+
+              document.getElementById('proc').innerHTML = proc;
+
+              document.getElementById('summ').innerHTML = result.toFixed();
+
+              document.getElementById('summ2').innerHTML = summ2.toFixed();
+
+              document.getElementById('ppp').innerHTML = ref;
+
+
+            }
+            function rangeSlider(value) {
+              document.getElementById('rangeValue').innerHTML = value;
+              var sum = value
+              dd()
+            };
+
+            function rangeSlider2(value) {
+              document.getElementById('rangeValue2').innerHTML = value;
+              var ref = value
+              dd()
+            };
+          </script>
+        </div>
+
+
+
+
+      </section>
+
+    </main>
+    @@include('html/footer.html',{})
+  </div>
+
+
+  <script src="js/app.min.js"></script>
+
+</body>
+
+
+</html>

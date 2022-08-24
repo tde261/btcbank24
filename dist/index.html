@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Обменник Bitcoin в телеграмме - BtcBank24</title>
+    <meta name="description"
+        content="ООбменять биткоин через телеграмм бота за считанные минуты, интуитивно понятный интерфейс бота, выгодные курсы обмена, минимальная сумма обмена 200 рублей." />
+    <link rel="stylesheet" href="css/style.css?_v=20220705112849">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js?_v=20220824183135" defer ></script>
+    <meta name="viewport" content="width=device-width">
+<!-- Yandex.Metrika counter -->
+<script>
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(68966344, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><picture><source srcset="https://mc.yandex.ru/watch/68966344" type="image/webp"><picture><source srcset="https://mc.yandex.ru/watch/68966344" type="image/webp"><img src="https://mc.yandex.ru/watch/68966344" style="position:absolute; left:-9999px;" alt="" /></picture></picture></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    <!--, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 -->
+
+
+<link type="image/png" sizes="120x120" rel="icon" href="/img/favicon.png">
+
+</head>
+
+    <body class="body">
+<div class="wrapper text">
+
+     <header class="header text" >
+    <a href="/index.html" class="header__logo"></a>
+            
+    <div class="header__burger">
+        <span></span>
+    </div>
+    <nav class="header__menu">
+        <ul class="header__list">
+            <li>
+                <a href="" class="header__link">Направления обмена</a>
+                <span class="menu__arrow"></span>
+                <ul class="menu__sub-list">
+                    <li><a class="menu__sub-link" href="/obmen-sberbank-bitcoin.html">Сбербанк на Bitcoin (BTC)</a></li>
+                    <li><a class="menu__sub-link" href="/obmen-bitcoin-na-sberbank.html">Bitcoin (BTC) на Сбербанк</a></li>
+                    <li><a class="menu__sub-link" href="/kupit-monero-xmr.html">Купить/Продать Monero XMR</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="/partners.html" class="header__link">Партнёрам</a>
+            </li>
+            <li>
+                <a href="/contest.html" class="header__link">🎁Конкурс</a>
+            </li>
+            <li>
+                <a href="/bitcoin-accelerator/index.php" class="header__link">🚀 Ускоритель транзакций</a>
+            </li>
+            <li>
+                <a href="/blog.html" class="header__link">Блог</a>
+            </li>
+            <li>
+                <a href="/data-table.html" class="header__link">Биржи</a>
+            </li>
+            <li>
+                <a href="/about.html" class="header__link">Контакты</a>
+            </li>
+        </ul>
+                <script>
+                     function toggledark() {
+                        if (localStorage.getItem('theme') === 'dark') {
+                            localStorage.removeItem('theme');
+                            document.body.classList.remove("dark");
+                            if(document.getElementById('firstImage') !== null) {
+                                document.getElementById('firstImage').innerHTML = `<img src="img/obmen-bitcoin-v-telegramme-btcbank24.svg" alt="">`;
+                            }
+                            if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24.svg" alt="logo">`;
+                            }
+                            document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24.svg);');
+                            } else {
+                            localStorage.setItem('theme', 'dark');
+                            document.body.classList.add("dark");
+                            if(document.getElementById('firstImage') !== null) {
+                                document.getElementById('firstImage').innerHTML = `<img src="img/obmennik-bitcoin-v-telegram_2.svg" alt="">`;
+                            }
+                            if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24_2.svg" alt="logo">`;
+                            }
+                            document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24_2.svg);');
+                        }
+                    }                
+
+                    document.addEventListener("DOMContentLoaded", () => {
+                    if (localStorage.getItem('theme') === 'dark') {
+                        document.body.classList.add('dark');
+                        document.getElementById('toggledark').checked = true;
+                        if(document.getElementById('firstImage') !== null) {
+                          document.getElementById('firstImage').innerHTML = `<img src="img/obmennik-bitcoin-v-telegram_2.svg" alt="">`;
+                        }
+                        if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24_2.svg" alt="logo">`;
+                        }
+                        document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24_2.svg);');
+                    } else {
+                        document.body.classList.remove('dark');
+                        document.getElementById('toggledark').checked = false;
+                        if(document.getElementById('firstImage') !== null) {
+                          document.getElementById('firstImage').innerHTML = `<img src="img/obmen-bitcoin-v-telegramme-btcbank24.svg" alt="">`;
+                        }
+                        if(document.getElementById('aboutLogo') !== null) {
+                                document.getElementById('aboutLogo').innerHTML = `<img class="content__img" src="/img/btcbank24.svg" alt="logo">`;
+                        }
+                        document.querySelector('.header__logo').setAttribute('style', 'background-image: url(../img/btcbank24.svg);');
+                    }
+                  });
+
+                </script>
+        
+    </nav>
+    <div class="dark-version-wrapper">
+                <label class="dark-version">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+
+                    <path xmlns="http://www.w3.org/2000/svg" style="fill:black;" d="M29,28c0-11.917,7.486-22.112,18-26.147C43.892,0.66,40.523,0,37,0C21.561,0,9,12.561,9,28  s12.561,28,28,28c3.523,0,6.892-0.66,10-1.853C36.486,50.112,29,39.917,29,28z"/>
+                   </svg>
+
+                    <input type="checkbox" onchange="toggledark()" id="toggledark">
+                    <span class="toggledark round"></span>
+                </label>
+            </div>
+</header>
+
+ 
+
+        <main class="main">
+            <aside class="sidebar">
+               
+               
+               
+
+
+
+                <nav class="sidebar__menu">
+                    <h3 class="sidebar__title">Наши валюты</h3>
+                    <ul class="sidebar__list">
+                        <li>
+                            <a href="/bitcoin-btc.html" class="sidebar__link">Bitcoin BTC</a>
+                        </li>
+                        <li>
+                            <a href="/ethereum-eth.html" class="sidebar__link">Ethereum ETH</a>
+                        </li>
+                        <li>
+                            <a href="/litecoin-ltc.html" class="sidebar__link">Litecoin LTC</a>
+                        </li>
+                        <li>
+                            <a href="/monero-xmr.html" class="sidebar__link">Monero XMR</a>
+                        </li>
+                        <li>
+                            <a href="/usdt-trc20.html" class="sidebar__link">Tether USDT</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sidebar__chat">
+                    <h3 class="sidebar__title">Чат пользователей</h3>
+                    <p>Чат наших пользователей, общение вопросы и проблемы решаются за несколько минут.</p>
+                    <p>Если вы новичок
+                        — вам подскажут и помогут как совершить сделку.</p>
+                    <br>
+                    <a class="sidebar__batton" href="https://t.me/+IlCWRiDWXwdkOWVi" rel="nofollow">💬Чат</a>
+
+                </div>
+                <div class="sidebar__chat">
+                    <h3 class="sidebar__title">Канал Telegram</h3>
+                    <p>В телеграмм канале публикуются важные новости сервиса, технические работы, обновления бота,
+                        актуальная информация, еженедельные конкурсы.</p>
+                    <br>
+                    <a class="sidebar__batton" href="https://t.me/+yhSWlGlrBq05MGM6" rel="nofollow">⚙️Канал</a>
+
+                </div>
+            </aside>
+
+            <aside class="sidebar_2">
+
+              
+              <div class="   mb-3   d-flex flex-column    align-items-center dashboard-card " id="last_block_header" style=" width: 100%; margin-top: 50px;text-align: center;">
+                            <div class="p-4  dashboard-layout  d-flex flex-column    align-items-center" style="margin-bottom: 50px; height:100%;">
+                                <p class="lattolight" style=" ">Последний блок</p>
+                                <h1 id="header_last_block_height" class="lattobold pl-1 pr-1" style="margin-bottom: 20px;">740 048</h1>
+                                <p class="lattolight pb-1">Время с последнего блока</p>
+                                <div id="block_age" style="display: flex;flex-direction: row;margin: 10px 0 20px;justify-content: center;">
+                                    <div class="countdown-section" style="padding: 0 9px;font-size: 20px;display: flex; flex-direction: column;border-right: 1px solid black"><b id="blockHours">00</b>
+                                        <span>часы</span></div>
+                                    <div class="countdown-section" style="padding: 0 9px;font-size: 20px;display: flex; flex-direction: column;border-right: 1px solid black"><b id="blockMinutes">19</b>
+                                        <span>мин</span></div>
+                                    <div class="countdown-section" style="padding: 0 9px;font-size: 20px;display: flex; flex-direction: column;"><b id="blockSeconds">32</b>
+                                        <span>сек</span></div>
+                                </div>
+                                <div class="lattolight pb-1 pt-3 d-flex flex-row justify-content-around align-items-end w-100" style="display: flex;justify-content: center;column-gap: 10px;">
+                                    <div class="d-flex flex-column align-items-center" style="display: flex;
+    flex-direction: column;">
+                                        <span id="unconfirmed_tx_count" class=" pl-1 pr-1 bold d-block ">3 792</span>
+                                        <small style="position: relative;top: 7px; font-size: 15px;">Транзакции пула</small>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="d-flex flex-row align-items-center" style="display: flex;
+    flex-direction: row;column-gap: 5px;">
+                                            <span id="header_fee" style="padding-bottom: 0.3em;" class=" pl-1 pr-1 bold ">3.<span class="after-dot">07<span class="amount-tail-zerro"></span></span></span>
+                                            <div class="small">
+                                                <small> ś/vByte</small>
+                                            </div>
+                                        </div>
+                                        <small>Лучший гонорар</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>  
+                        <script>
+                           
+                            async function load1() {
+                              let url = `https://bitaps.com/js/get/update`;
+                              let obj = await (await fetch(url, { method: "post"})).json();
+                        
+                              document.getElementById('header_last_block_height').innerHTML = obj.last_block_height
+                              document.getElementById('blockHours').innerHTML = obj.last_block_age.hours
+                              document.getElementById('blockMinutes').innerHTML = obj.last_block_age.minutes
+                              document.getElementById('blockSeconds').innerHTML = obj.last_block_age.seconds
+                              document.getElementById('unconfirmed_tx_count').innerHTML = obj.unconfirmed_transactions_count
+                              document.getElementById('header_fee').innerHTML = obj.bestFee
+                           }
+                            setInterval(function() {
+
+                             load1();
+                         },100)
+                        </script>
+
+
+
+
+            </aside>
+
+            <section class="content">
+                <h1 class="content__title__h1">Обменник Bitcoin в телеграмме - BtcBank24</h1>
+                <div class="content__content">
+                    <p>Обменник в Телеграмме предлагает пользователям уникальный сервис – практически моментальный обмен
+                        криптографических и фиатных валют на выгодных условиях. Специально для наших посетителей мы
+                        создали
+                        автоматическую систему обмена биткоин в Телеграмме, позволяющую вводить и выводить криптовалюту
+                        очень быстро, а главное, полностью конфиденциально.</p>
+                </div>
+                
+               
+                <div style="margin: auto;width: 240px">
+                    
+                    
+                <script async src="https://telegram.org/js/telegram-widget.js?19&_v=20220824183135" data-telegram-login="Btcbank24com_bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+<script type="text/javascript">
+
+ function onTelegramAuth(user) {
+    console.log('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+    document.querySelector('.login-block').innerHTML = '<h3><a title="Личный кабинет" href="/profile.html">@' + user.username + ' </a></h3> <a href="/" onClick="localStorage.clear();">Выйти</a>';
+  
+    
+    $.post('/server.php', {user: user}, function(data){
+        
+         const name = '@' + user.username;
+        localStorage.setItem('username', name);
+    });
+      
+ 
+  }
+</script>
+</div>
+
+
+                <div class="message">
+
+                    <div class="message__text"><span>Обменник биткоин в Телеграмме – это автоматизированная система, в
+                            которой все действия
+                            выполняются специально созданным ботом.</span></div>
+
+                </div>
+
+
+                <section class="content__gallery gallery"></section>
+
+
+                <div class="gallery__items">
+                    <div class="gallery__item gallery__item_big" id="firstImage">
+                        <img src="img/obmen-bitcoin-v-telegramme-btcbank24.svg" alt="">
+
+                    </div>
+                </div>
+                <div class="button_start" style="margin-top: 20px;">
+                    <a class="button" href="https://t.me/Btcbank24com_v2_bot?start=btcbank24" rel="nofollow">Запустить
+                        бота</a>
+
+                </div>
+
+                <div class="content__list">
+                    <p class="content__list__title">Список обязанностей пользователей минимален:</p>
+
+                    <ul class="content__list__ul">
+                        <li>Выбрать направление обмена.</li>
+                        <li>Указать необходимую сумму.</li>
+                        <li>Ввести реквизиты для получения перевода и следовать подсказкам системы.</li>
+                        <li>После получения платежа от клиента Телеграмм бот оперативно производит ответный платеж,
+                            присылая пользователю выбранную им валюту в предварительно указанном объеме.</li>
+
+                    </ul>
+                </div>
+
+                <div class="">
+                    <br>
+                    <p>
+                        Немаловажно, что обменник в Телеграмме работает не только с биткоин, но и с другими
+                        криптовалютами. Направлений обмена достаточно много, а итоговая сумма
+                        перевода ограничивается только имеющимся у нас резервом.</p>
+                    <br>
+                    <p> Причем, если резерва не хватает, пользователю достаточно связаться с оператором и договориться о
+                        проведении обмена в ручном режиме. Мы всегда идем навстречу клиентам, и они такой подход по
+                        достоинству ценят.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2 class="content__title__h2">Почему обменник биткоин в Телеграмме – это лучший вариант для обмена
+                        криптовалюты?</h2>
+
+                    <p>На данный момент в сети Интернет функционируют десятки обычных обменных пунктов, но предлагаемый
+                        ими сервис зачастую характеризуется множеством недостатков.</p>
+                    <br>
+                    <p>Во-первых, они обязаны сотрудничать с государственными структурами, а значит, не могут обеспечить
+                        100%-ную конфиденциальность проводимых обменов.</p>
+                    <br>
+                    <p>Во-вторых, на таких сервисах часто требуется регистрация – либо для получения доступа ко всем
+                        опциям обмена, либо для участия в реферальных программах.</p>
+                    <br>
+                    <br>
+                    <div class="gallery__items">
+                        <div class="gallery__item gallery__item_big">
+
+                          <picture><source srcset="img/obmen-v-telegramme.webp" type="image/webp"><img src="img/obmen-v-telegramme.png" title="обменник в телеграмме" alt="" srcset="img/obmen-v-telegramme.webp 720px" /></picture>
+
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <h2 class="content__title__h2">Обменник биткоин в Телеграмме намного проще и надежнее.</h2>
+                    <ul class="content__list__ul">
+                        <li>В первую очередь потому, что руководство Телеграмм не заинтересовано в сотрудничестве с
+                            контролирующими госструктурами.</li>
+                        <li>Во вторую – потому что наш бот не требует регистрации и введения важной персональной
+                            информации.</li>
+                        <li>Здесь не понадобится указывать данные паспорта или прописывать полные реквизиты банковских
+                            карт.</li>
+                        <li>Процесс обмена честный и прозрачный. Потому наш обменник биткоин в Телеграмме считается
+                            наиболее надежным решением.</li>
+                    </ul>
+                    <br>
+                    <p>К тому же мы обеспечиваем не только быстрый обмен валют, но и информационную поддержку. Чтобы
+                        получить ответ на любой тематический вопрос, достаточно обратиться к <a class="link_content"
+                            href="https://t.me/Btcbank24com" rel="nofollow">операторам</a>. Они
+                        предоставят нужную информацию – оперативно и предельно простым языком.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2 class="content__title__h2">Насколько целесообразно покупать и продавать биткоин в Телеграмме?
+                    </h2>
+                    <div class="message">
+
+                        <div class="message__text"><span>Значимым преимуществом обмена биткоин в Телеграмме является
+                                скорость проведения операций. Обычно бот закрывает сделку за 10 минут.</span></div>
+
+                    </div>
+                    <p>Максимальное время ожидания (при повышенной нагрузке сети блокчейн) – полчаса. Не менее важным
+                        достоинством такого способа обмена считается устанавливаемый курс валют. Он предельно выгодный –
+                        вне зависимости от направления обмена. Кстати, комиссии при обмене отсутствуют. Клиенты получают
+                        именно ту сумму, которая указана в заявке.</p>
+                    <br>
+                    <p>Совокупность названных обстоятельств является лучшим доказательством целесообразности
+                        использования обменника в Телеграмме, а потому многие люди пользуются нашим сервисом на
+                        постоянной основе.</p>
+                    <br>
+                    <ul class="content__list__ul">
+                        <li><span>Минимальные ограничения</span> — Минимальная сумма обмена – 500 рублей. Обмен 200
+                            тысяч рублей и
+                            более производится через оператора по индивидуальному курсу.</li>
+                        <li><span>Еженедельные розыгрыши</span> — Все участники обменов вправе принимать участие в
+                            еженедельных
+                            конкурсах с гарантированным призовым фондом в 1000 рублей.</li>
+                        <li><span>Реферальная система</span> — Наши клиенты зарабатывают 1% от суммы сделок привлеченных
+                            пользователей. Приглашать друзей к нам выгодно!</li>
+                        <li><span>Защищенность личных данных</span> — Владельцы Telegram гарантируют неразглашение
+                            данных
+                            пользователей. Переписки с ботом и операторами не передаются третьим лицам.</li>
+                        <li><span>Минимум предоставляемых реквизитов</span> — При обмене необходимо указывать только
+                            номера кошельков
+                            и платежных карт. Другие данные система не запрашивает.</li>
+                        <li><span>Быстрое реагирование</span> — Бот оперативно выполняет заявки в порядке очереди.
+                            Операторы отвечают
+                            в течение 3 минут и помогают решить любые вопросы.</li>
+                    </ul>
+                    <br>
+                    <div class="button_start">
+                        <a class="button" href="https://t.me/Btcbank24com_v2_bot?start=btcbank24"
+                            rel="nofollow">Запустить
+                            бота</a>
+
+                    </div>
+
+                    <div class=""></div>
+                </div>
+
+
+
+
+            </section>
+        </main>
+
+
+        <footer class="footer text">
+    <div class="footer__copy" style="position: relative; margin-left: 20px">
+        Copy © 2022
+    <a style="margin-left: 20px; position: absolute;top: -5px;" href="https://t.me/+yhSWlGlrBq05MGM6" target="_blank">
+    	<img src="/img/telegram.svg" alt="telegram" style="width: 30px;height:30px;"/>
+    </a>
+    </div>
+    <div class="footer__text">
+        We know how to exchange 😉
+    </div>
+</footer>
+    <div class="footer-block" style="padding: 0 0 15px 0;text-align: center;background: #2c3341;">
+        <a style="color: white; margin: 0 40px;min-width: 240px;display: inline-block;" href="/agreement.html">Пользовательское соглашение</a>
+        <a style="color: white; margin: 0 40px;min-width: 240px;display: inline-block;" href="/privacy.html">Политика конфиденциальности</a>
+    </div>
+<a class="back_to_top" title="Наверх">
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 466.667 466.667" style="enable-background:new 0 0 466.667 466.667;" xml:space="preserve">
+    <g>
+    	<path d="M423.571,176.43L256.904,9.764c-13.017-13.018-34.122-13.018-47.14,0L43.098,176.43c-13.018,13.018-13.018,34.123,0,47.141   c13.018,13.018,34.123,13.018,47.141,0l109.762-109.764v319.527c0,18.408,14.924,33.333,33.333,33.333   c18.409,0,33.333-14.925,33.333-33.333V113.807l109.764,109.764c6.509,6.508,15.039,9.762,23.57,9.762   c8.53,0,17.062-3.254,23.569-9.764C436.588,210.552,436.588,189.448,423.571,176.43z"/>
+    </g>
+    </svg>
+</a>
+
+
+        <script src="js/app.min.js?_v=20220824183135"></script>
+        
+        <script>
+         setTimeout(function() {
+            let div = document.createElement("div");
+            div.classList.add("login-block");
+            document.querySelector('.sidebar_2').prepend(div)
+            var name = localStorage.getItem('username');
+         
+            document.querySelector('.login-block').innerHTML = '<h3><a title="Личный кабинет" href="/profile.html">  ' + name + ' </a></h3> <a href="/" onClick="localStorage.clear();">Выйти</a>';
+            
+            if(localStorage.getItem("username") === null) {
+               document.querySelector('.login-block').innerHTML = '<a href="/login.php">Войти</a><a href="/register.php">Регистрация</a>';
+            }
+         }, 500);
+        </script>
+    </body>
+</div>
+
+</html>

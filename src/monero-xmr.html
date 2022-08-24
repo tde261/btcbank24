@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Monero XMR - BtcBank24</title>
+    <meta name="description"
+        content="Monero (XMR, монеро) – популярная криптовалюта, используемая для осуществления анонимных транзакций различного назначения." />
+@@include('html/headBlock.html',{})
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500&display=swap" rel="stylesheet">
+    <style type="text/css">
+    	///  Fonts  ///
+h1 {
+    font-size: 25px !important;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+h1, 
+h2, 
+p {
+    font-family: 'Red Hat Text', sans-serif;
+    color: #303030;
+}
+
+/// Card Container ///
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+
+/// Cards ///
+cards {
+    width: 90%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.btc,
+.cosmos,
+.ethereum {
+    display: grid;
+    min-width: 250px;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(50px, 60px) 1fr;
+    grid-template: 
+        "info"
+        "chart";
+    border-radius: 30px;
+}
+
+.btc {
+}
+
+.cosmos {
+}
+
+.ethereum {
+}
+
+.asset-info {
+    grid-area: info;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5% 0 5%;
+    margin-bottom: 23px;
+}
+
+.title {
+    display: inline-flex;
+}
+
+card h1 {
+    margin-left: 10px;
+}
+
+
+/// Charts ///
+#btcChart,
+#cosmosChart,
+#ethereumChart {
+    grid-area: chart;
+    border-radius: 0px 0px 30px 30px;
+    margin-top: auto;
+}
+
+    </style>
+    <!--, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 -->
+ 
+
+
+<link type="image/png" sizes="120x120" rel="icon" href="/img/favicon.png">
+</head>
+
+<body class="body">
+    <div class="wrapper text">
+        @@include('html/header.html',{})
+
+        <main class="main">
+
+            <section class="content">
+                <h1 class="content__title__h1 box_about_title">Monero</h1>
+                <container class="container">
+    <cards class="cards">
+        <bitcoin style="margin-bottom: 40px;" class="btc">
+            <card class="asset-info">
+                <div class="title">
+                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/xmr.svg" width="15%"> 
+                    <h1>Monero</h1>
+                </div>
+                <div class="details">
+                    <h2 class="asset-price" id="btcPrice"></h2>
+                </div>
+            </card>
+            <canvas id="btcChart"></canvas>
+        </bitcoin>
+    </cards>
+  </container>
+                
+                <h3 style="margin: 20px 0 10px 0;"><b>Что такое Monero?</b></h3>
+                 <p>Monero (XMR, монеро) – популярная криптовалюта, используемая для осуществления анонимных транзакций различного назначения. Технически Monero является форком Bytecoin (не путать с <a href="/bitcoin-btc.html">Bitcoin</a>) и функционирует на основе протокола CryptoNote. Запуск XMR состоялся в 2014 году. По официальным данным разработкой криптовалюты занималось 7 человек, причем практически все создатели XMR предпочли не разглашать свои настоящие имена.</p>
+                 <p>Криптовалюта Monero не может похвастать высокой капитализацией (относительно ведущих криптовалют), зато обеспечивает полную конфиденциальность проводимых операций, а потому является незаменимым инструментом для пользователей блокчейн, заинтересованных в сокрытии всей информации по совершаемым сделкам. При этом заинтересованным пользователям не нужно разбираться в каких-либо особенностях использования сети, так как все необходимые механизмы защиты платежей полностью обеспечиваются базовым алгоритмом работы сети.</p>
+
+                 <h3 style="margin: 20px 0 10px 0;"><b>Ключевые особенности Monero</b></h3>
+                 <p>Приоритетной целью создателей Monero (по их же словам) являлось достижение максимально возможного уровня децентрализации, причем с реализацией этой задачи разработчики справились отлично. Достичь результата получилось благодаря использованию одновременно нескольких особенностей криптовалютной сети и непосредственно криптовалюты Monero.</p>
+                 <p>Первая обозначенная особенность – полная взаимозаменяемость токенов XMR. У монет XMR нет уникальных идентификаторов (в отличие от того же Bitcoin), поэтому отследить перемещение Monero в сети невозможно даже теоретически (частичное исключение – ситуация, если больше половины токенов будет находиться в руках одного пользователя).</p>
+                 <p>Вторая особенность – применение технологии кольцевых подписей. При проведении (подтверждении) сделки выходные данные выбираются в блокчейн случайным образом, поэтому отследить отправителя и получателя криптовалюты не представляется возможным. Конечно, некоторые эксперты рекомендуют дополнительно дробить крупные переводы в целях безопасности, но на практике необходимость в подобной предосторожности отсутствует.</p>
+                 <p>Таким образом, транзакции в криптовалюте Monero действительно являются анонимными во всех смыслах этого слова.  Информацией о конкретном переводе XMR владеют лишь два пользователя – непосредственные участники сделки. Остальные пользователи доступа к данным не получают, поэтому идентификаторы контрагентов, а также сумма и время проведения сделки остаются для них неизвестными. Связь между осуществляемыми транзакциями отследить тоже нельзя. В первую очередь благодаря использованию одноразовых скрытых адресов, чье применение служит дополнительной гарантией обеспечения анонимности платежей.</p>
+
+                 <h3 style="margin: 20px 0 10px 0;"><b>Где можно купить и как хранить Monero?</b></h3>
+                 <p>Использование Monero позволяет организовывать быстрые и безопасные транзакции с полным соблюдением конфиденциальности. Поэтому многие люди предпочитают купить именно эту криптовалюту, а затем использовать ее для расчетов в интернете или хранить в надежде на значительный рост курса XMR и получения прибыли в будущем.</p>
+                 <p>Купить Monero проще всего на <a href="/data-table.html">криптовалютных биржах</a> и в онлайн-обменниках, хотя первый вариант не слишком популярен. Все же регистрация на биржах требует предоставления персональных данных, а потенциальные и реальные владельцы монет Monero рассказывать о себе обычно не любят. Поэтому использование услуг обменников, по сути, является единственным рациональным решением. Если, конечно, покупателям хочется сохранить анонимность в процессе осуществления сделок.</p>
+                 <p>Для хранения Monero можно использовать программный (Monero GUI), онлайн (MyMonero) или «холодный» (в виде внешнего физического накопителя) кошелек. Первый вариант считается универсальным (оптимальное сочетание надежности и удобства использования). Второй – характеризуется повышенным удобством. Третий – максимально надежен с точки зрения безопасности хранения XMR. Каждый вариант по-своему хорош, поэтому все три вида кошельков востребованы и активно используются тысячами владельцев монет XMR со всего мира.</p>
+             
+               
+                
+
+            </section>
+
+        </main>
+        @@include('html/footer.html',{})
+    </div>
+
+    
+    <script src="js/app.min.js"></script>
+     <script>const btcData = async () => {
+         const response = await fetch('https://min-api.cryptocompare.com/data/v2/histoday?fsym=XMR&tsym=USD&limit=1110');
+         const json = await response.json();
+         const data = json.Data.Data
+         const times = data.map(obj => new Date(obj.time))
+         const prices = data.map(obj => obj.high)
+         return {
+           times,
+           prices
+         }
+       }
+
+       function checkStatus(response) {
+         if (response.ok) {
+           return Promise.resolve(response);
+         } else {
+           return Promise.reject(new Error(response.statusText));
+         }
+       }
+       
+       let createBtcChart
+
+       async function printBtcChart() {
+        let { times, prices } = await btcData()      
+
+        let btcChart = document.getElementById('btcChart').getContext('2d');      
+
+        let gradient = btcChart.createLinearGradient(0, 0, 0, 900);      
+
+        gradient.addColorStop(0, 'rgba(247,147,26,.5)');
+        gradient.addColorStop(.425, 'rgba(255,193,119,0)');      
+
+        Chart.defaults.global.defaultFontFamily = 'Red Hat Text';
+        Chart.defaults.global.defaultFontSize = 12;      
+
+        createBtcChart = new Chart(btcChart, {
+          type: 'line',
+          data: {
+            labels: times,
+            datasets: [{
+              label: '$',
+              data: prices,
+              backgroundColor: gradient,
+              borderColor: 'rgba(247,147,26,1)',
+              borderJoinStyle: 'round',
+              borderCapStyle: 'round',
+              borderWidth: 3,
+              pointRadius: 0,
+              pointHitRadius: 10,
+              lineTension: .2,
+            }]
+          },      
+
+          options: {
+            title: {
+              display: false,
+              text: 'Heckin Chart!',
+              fontSize: 35
+            },      
+
+            legend: {
+              display: false
+            },      
+
+            layout: {
+              padding: {
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }
+            },      
+
+            scales: {
+              xAxes: [{
+                display: false,
+
+                gridLines: {}
+              }],
+              yAxes: [{
+                display: true,
+                gridLines: {}
+              }]
+            },      
+
+            tooltips: {
+              callbacks: {
+                //This removes the tooltip title
+                title: function() {}
+             },
+              //this removes legend color
+              displayColors: false,
+              yPadding: 10,
+              xPadding: 10,
+              position: 'nearest',
+              caretSize: 10,
+              backgroundColor: 'rgba(255,255,255,.9)',
+              bodyFontSize: 15,
+              bodyFontColor: '#303030' 
+            }
+          }
+        });
+      }
+
+      async function updateBitcoinPrice() {
+        let { times, prices } = await btcData()
+        let currentPrice = prices[prices.length-1].toFixed(2);      
+
+        document.getElementById("btcPrice").innerHTML = "$" + currentPrice;
+      }
+      updateBitcoinPrice()
+      printBtcChart()
+     </script>
+
+</body>
+
+
+</html>
